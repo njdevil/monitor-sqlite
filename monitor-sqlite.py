@@ -1,12 +1,15 @@
-import datetime
 import commands
-import sqlite3
+import datetime
 import os
 import re
+import sqlite3
+
+DATABASE_FILE='/root/monitor.db'
+DATABASE_TABLE='records'
 
 def checkdb():
-    if not os.path.exists('/root/monitor.db'):
-        dbconn=sqlite3.connect('/root/monitor.db')
+    if not os.path.exists(DATABASE_FILE):
+        dbconn=sqlite3.connect(DATABASE_FILE)
         query=dbconn.cursor()
         query.execute('create table records (command text, date real, time real, value real)')
         dbconn.commit()
@@ -19,7 +22,7 @@ def dates():
     return date,time
 
 
-def dbinsert(command,value,table='records'):
+def dbinsert(command,value,table=DATABASE_TABLE):
     date,time=dates()
     dbconn=sqlite3.connect('/root/monitor.db')
     insert=dbconn.cursor()
