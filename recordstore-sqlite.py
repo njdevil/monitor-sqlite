@@ -24,7 +24,7 @@ def dates():
 
 def dbinsert(command,value,table=DATABASE_TABLE):
     date,time=dates()
-    dbconn=sqlite3.connect('/root/monitor.db')
+    dbconn=sqlite3.connect(DATABASE_FILE)
     insert=dbconn.cursor()
     insert.execute('insert into '+table+' values("'+command+',"'+date+'","'+time+'","'+value+'")')
 
@@ -33,11 +33,10 @@ def getapachewc():
     for a,b,c in os.walk('/var/log/apache2'):
         for file in c:
             data=""
-            if not re.search("mpsclient",a) and not re.search("alpha",a):
-                if re.search("access\.log$",file):
-                    data=commands.getoutput("wc -l "+os.path.join(a,file))
-                    data=re.sub(" .*$","",data)
-                    count.append(int(data))
+            if re.search("access\.log$",file):
+                data=commands.getoutput("wc -l "+os.path.join(a,file))
+                data=re.sub(" .*$","",data)
+                count.append(int(data))
     dbinsert('wc',str(sum(count)))
 
 
