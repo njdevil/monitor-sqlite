@@ -1,0 +1,36 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Server monitor</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <style>
+    body {background-color: #aaccff;
+      font-family: verdana;}
+    #loadname {position: absolute;
+      top: 0px;
+      left: 300px;}
+    #load {position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: -700px;}
+    #memoryname {position: absolute;
+      top: 320px;
+      left: 300px;}
+    #memory {position: absolute;
+      top: 350px;
+      left: 50%;
+      margin-left: -700px;}
+    #wcname {position: absolute;
+      top: 640px;
+      left: 300px;}
+    #wc {position: absolute;
+      top: 670px;
+      left: 50%;
+      margin-left: -700px;}
+  </style>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+{% autoescape off %}
+{{data}}
+{% endautoescape %}
+</body>
+</html>
