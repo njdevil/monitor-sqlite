@@ -6,7 +6,7 @@ import re
 import sqlite3
 import time
 
-dbconn=sqlite3.connect('/var/www/hosts/assets.usatoday.com/code/monitor.db', check_same_thread = False)
+dbconn=sqlite3.connect('/var/www/hosts/monitor.db', check_same_thread = False)
 def dbquery(querystring):
     query=dbconn.cursor()
     query.execute(querystring)
