@@ -19,3 +19,8 @@ These 3 values are written to the Database.
 When calling the WSGI script or the Django View, the data is retrieved and reformatted into the structure required by the new Google Charts Javascript format
 This data is then rendered through their Annotated Line Chart (with dates) and displayed on screen.
 Record display is limited to 100,000 data points, but can be removed since Google Charts does not impose a limit (it will just take a really long time)
+
+
+GPL
+-----------
+This code is released as GPL3 and is copyright 2013 by Modular Programming Systems Inc.

@@ -1,3 +1,10 @@
+##########
+# SQLite Server Monitor v3.1
+# copyright 2013, Modular Programming Systems Inc
+# released as GPL3
+#
+##########
+
 from django.shortcuts import render_to_response
 from PROJECT.APP.models import TABLE
 import datetime

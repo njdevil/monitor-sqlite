@@ -1,5 +1,12 @@
 #! /usr/bin/python
 
+##########
+# SQLite Server Monitor v3.1
+# copyright 2013, Modular Programming Systems Inc
+# released as GPL3
+#
+##########
+
 import commands
 import datetime
 import re
